@@ -1,4 +1,5 @@
 import type { ITunesSearchParams, MediaType } from './itunes-search-options.js';
+import type { ITunesSearchResponse } from './itunes-search-result.js';
 
 export class itunesSearch {
   private static readonly ITUNES_SEARCH_URL = 'https://itunes.apple.com/search';
@@ -12,12 +13,13 @@ export class itunesSearch {
       const response = await fetch(searchUrlWithParams);
 
       if (!response.ok) {
+        // noinspection ExceptionCaughtLocallyJS
         throw new Error(
           `Failed to fetch data from iTunes Search API: ${response.status}}`,
         );
       }
 
-      return await response.json();
+      return await response.json() as ITunesSearchResponse;
     } catch (error) {
       if (error instanceof Error) {
         throw new Error(`Fetch failed: ${error.message}`);

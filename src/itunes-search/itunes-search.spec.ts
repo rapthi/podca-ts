@@ -1,5 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
 import { itunesSearch } from './itunes-search.js';
+import type { ITunesSearchResponse } from './itunes-search-result.js';
 
 describe('itunesSearch', () => {
   let searcher: itunesSearch;
@@ -10,7 +11,23 @@ describe('itunesSearch', () => {
   });
 
   it('should return data with success when the response is ok', async () => {
-    const mockData = { resultCount: 1, results: [{ trackName: 'Test Song' }] };
+    const mockData: ITunesSearchResponse = {
+      resultCount: 1,
+      results: [
+        {
+          wrapperType: 'track',
+          kind: 'song',
+          trackName: 'Test Song',
+          artistName: 'Test Artist',
+          collectionName: 'Test Album',
+          trackPrice: 0.99,
+          country: 'USA',
+          currency: 'USD',
+          releaseDate: '2023-01-01T08:00:00Z',
+          primaryGenreName: 'Pop',
+        },
+      ],
+    };
 
     vi.mocked(fetch).mockResolvedValueOnce({
       ok: true,
