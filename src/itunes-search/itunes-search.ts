@@ -12,11 +12,12 @@ export class itunesSearch {
       const response = await fetch(searchUrlWithParams);
 
       if (!response.ok) {
-        throw new Error(`Failed to fetch data from iTunes Search API: ${response.status}}`);
+        throw new Error(
+          `Failed to fetch data from iTunes Search API: ${response.status}}`,
+        );
       }
 
-      const data = await response.json();
-      return data;
+      return await response.json();
     } catch (error) {
       if (error instanceof Error) {
         throw new Error(`Fetch failed: ${error.message}`);
