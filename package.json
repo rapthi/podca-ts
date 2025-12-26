@@ -4,13 +4,21 @@
   "description": "A package for podcast management",
   "keywords": ["podcast", "typescript", "parser", "iTunes Search"],
   "homepage": "https://github.com/rapthi/podca-ts",
+  "bugs": {
+    "url": "https://github.com/rapthi/podca-ts/issues"
+  },
+  "author": "Thierry Rapillard <rapthi@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rapthi/podca-ts.git"
+  },
+  "files": ["dist"],
   "main": "dist/index.js",
   "scripts": {
     "build": "tsc"
   },
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "license": "MIT",
+  "type": "module",
   "devDependencies": {
     "@types/node": "^25.0.3",
     "typescript": "^5.9.3"
