@@ -2,7 +2,12 @@
   "name": "podca-ts",
   "version": "1.0.0",
   "description": "A package for podcast management",
-  "keywords": ["podcast", "typescript", "parser", "iTunes Search"],
+  "keywords": [
+    "podcast",
+    "typescript",
+    "parser",
+    "iTunes Search"
+  ],
   "homepage": "https://github.com/rapthi/podca-ts",
   "bugs": {
     "url": "https://github.com/rapthi/podca-ts/issues"
@@ -12,15 +17,21 @@
     "type": "git",
     "url": "git+https://github.com/rapthi/podca-ts.git"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "main": "dist/index.js",
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "ci": "npm run build && npm run check-format",
+    "format": "prettier --write '**/*.{ts,json}'"
   },
   "license": "MIT",
   "type": "module",
   "devDependencies": {
     "@types/node": "^25.0.3",
-    "typescript": "^5.9.3"
+    "prettier": "^3.7.4",
+    "typescript": "^5.9.3",
+    "vitest": "^4.0.16"
   }
 }
