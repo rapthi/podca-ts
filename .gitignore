@@ -1,0 +1,14 @@
+# Dependencies
+node_modules/
+
+# TypeScript build output
+dist/
+
+# Source maps
+*.map
+
+# IDE
+.idea/
+
+# Logs
+npm-debug.log*
