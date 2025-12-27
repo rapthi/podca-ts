@@ -1,7 +1,7 @@
 import type { ITunesSearchParams, MediaType } from './itunes-search-options.js';
 import type { ITunesSearchResponse } from './itunes-search-result.js';
 
-export class itunesSearch {
+export class ITunesSearch {
   private static readonly ITUNES_SEARCH_URL = 'https://itunes.apple.com/search';
 
   constructor() {}
@@ -30,7 +30,7 @@ export class itunesSearch {
   }
 
   private buildSearchUrl<T extends MediaType>(option: ITunesSearchParams<T>): string {
-    const url = new URL(itunesSearch.ITUNES_SEARCH_URL);
+    const url = new URL(ITunesSearch.ITUNES_SEARCH_URL);
 
     for (const [key, value] of Object.entries(option)) {
       if (value !== undefined) {
