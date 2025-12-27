@@ -60,6 +60,8 @@ export interface ITunesSearchResult {
   primaryGenreName?: string;
 
   releaseDate?: string;
+
+  feedUrl?: string;
 }
 
 export interface ITunesSearchResponse {

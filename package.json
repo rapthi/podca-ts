@@ -33,6 +33,7 @@
     "build": "tsc",
     "ci": "npm run build && npm run check-format",
     "format": "prettier --write '**/*.{ts,json}'",
+    "local": "npm run build && yalc push",
     "prepublishOnly": "npm run build"
   },
   "license": "MIT",
