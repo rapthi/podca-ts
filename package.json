@@ -1,26 +1,29 @@
 {
   "name": "podca-ts",
   "version": "1.0.0",
-  "description": "A package for podcast management",
-  "keywords": [
-    "podcast",
-    "typescript",
-    "parser",
-    "iTunes Search"
-  ],
-  "homepage": "https://github.com/rapthi/podca-ts",
-  "bugs": {
-    "url": "https://github.com/rapthi/podca-ts/issues"
-  },
+  "description": "A TypeScript library for parsing and managing podcast feeds from RSS/iTunes feeds",
   "author": "Thierry Rapillard <rapthi@gmail.com>",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rapthi/podca-ts.git"
   },
-  "types": "./dist/index.d.ts",
-  "files": [
-    "dist"
+  "bugs": {
+    "url": "https://github.com/rapthi/podca-ts/issues"
+  },
+  "homepage": "https://github.com/rapthi/podca-ts",
+  "keywords": [
+    "podcast",
+    "typescript",
+    "parser",
+    "itunes",
+    "rss",
+    "feed",
+    "xml"
   ],
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -28,23 +31,39 @@
       "require": "./dist/index.cjs"
     }
   },
-  "main": "dist/index.js",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
   "scripts": {
     "build": "tsc",
-    "ci": "npm run build && npm run check-format",
-    "format": "prettier --write '**/*.{ts,json}'",
-    "local": "npm run build && yalc push",
-    "prepublishOnly": "npm run build"
+    "test": "vitest",
+    "test:watch": "vitest --watch",
+    "test:coverage": "vitest --coverage",
+    "lint": "eslint src --ext .ts",
+    "lint:fix": "eslint src --ext .ts --fix",
+    "format": "prettier --write 'src/**/*.{ts,json}'",
+    "format:check": "prettier --check 'src/**/*.{ts,json}'",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm run test && npm run lint",
+    "ci": "npm run type-check && npm run format:check && npm run lint && npm run test:coverage && npm run build"
   },
-  "license": "MIT",
-  "type": "module",
+  "dependencies": {
+    "@sesamy/podcast-parser": "^1.11.0"
+  },
   "devDependencies": {
     "@types/node": "^25.0.3",
+    "@typescript-eslint/eslint-plugin": "^8.51.0",
+    "@typescript-eslint/parser": "^8.51.0",
+    "@vitest/coverage-v8": "^4.0.16",
+    "eslint": "^9.39.2",
     "prettier": "^3.7.4",
     "typescript": "^5.9.3",
     "vitest": "^4.0.16"
   },
-  "dependencies": {
-    "@sesamy/podcast-parser": "^1.11.0"
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
