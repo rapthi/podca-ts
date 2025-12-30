@@ -144,7 +144,7 @@ export class PodcastLoader {
   }
 
   private mapCategories(categories: RawCategory[] | undefined): Category[] {
-    if (!categories) return [];
+    if (!categories) {return [];}
 
     return categories.flatMap((category) => [
       { name: category['@_text'] },
@@ -153,7 +153,7 @@ export class PodcastLoader {
   }
 
   private mapEpisodes(items: RawEpisode[] | undefined): Episode[] {
-    if (!items) return [];
+    if (!items) {return [];}
 
     return items.map((item) => ({
       title: item.title,
@@ -172,7 +172,7 @@ export class PodcastLoader {
   }
 
   private mapEnclosure(enclosure: RawEnclosure[] | undefined): Enclosure | undefined {
-    if (!enclosure?.[0]) return undefined;
+    if (!enclosure?.[0]) {return undefined;}
 
     return {
       url: enclosure[0]['@_url'],

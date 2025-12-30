@@ -6,7 +6,7 @@ export class ItunesSearch {
 
   constructor() {}
 
-  async search<T extends MediaType>(option: ITunesSearchParams<T>) {
+  async search<T extends MediaType>(option: ITunesSearchParams<T>): Promise<ITunesSearchResponse> {
     const searchUrlWithParams = this.buildSearchUrl(option);
 
     try {

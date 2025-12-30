@@ -252,11 +252,7 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-MIT © [Thierry Rapillard](https://github.com/rapthi)
-
-## Changelog
-
-See [CHANGELOG.md](./CHANGELOG.md) for a list of changes in each release.
+MIT © [rapthi](https://github.com/rapthi)
 
 ## Support
 
