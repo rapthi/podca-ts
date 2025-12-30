@@ -1,12 +1,12 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { ITunesSearch } from './i-tunes-search.js';
+import { ItunesSearch } from './itunes-search';
 import type { ITunesSearchResponse } from './itunes-search-result.js';
 
 describe('itunesSearch', () => {
-  let searcher: ITunesSearch;
+  let searcher: ItunesSearch;
 
   beforeEach(() => {
-    searcher = new ITunesSearch();
+    searcher = new ItunesSearch();
     vi.stubGlobal('fetch', vi.fn());
   });
 
