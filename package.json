@@ -1,6 +1,6 @@
 {
   "name": "@rapthi/podca-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A TypeScript library for parsing and managing podcast feeds from RSS/iTunes feeds",
   "author": "Thierry Rapillard <rapthi@gmail.com>",
   "license": "MIT",
@@ -28,7 +28,7 @@
     ".": {
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js",
-      "require": "./dist/index.cjs"
+      "require": "./dist/index.js"
     }
   },
   "files": [
